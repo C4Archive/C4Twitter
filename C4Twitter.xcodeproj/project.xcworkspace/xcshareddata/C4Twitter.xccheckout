@@ -6,22 +6,30 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>26F2A9E9-E9BF-42EF-992A-369847B50FFB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>C4Twitter</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>54F4D03C461288D08B6868DC66C04481BECA35A3</key>
 		<string>https://github.com/C4Framework/C4iOS.git</string>
+		<key>7E1B41BCE70ED8D68DD8644B1034E17DA0DE4B94</key>
+		<string>https://github.com/C4Framework/C4Twitter</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>C4Twitter.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>54F4D03C461288D08B6868DC66C04481BECA35A3</key>
-		<string>C4iOS/</string>
+		<string>../../../C4iOS</string>
+		<key>7E1B41BCE70ED8D68DD8644B1034E17DA0DE4B94</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/C4Framework/C4iOS.git</string>
+	<string>https://github.com/C4Framework/C4Twitter</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>54F4D03C461288D08B6868DC66C04481BECA35A3</string>
+	<string>7E1B41BCE70ED8D68DD8644B1034E17DA0DE4B94</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -31,6 +39,14 @@
 			<string>54F4D03C461288D08B6868DC66C04481BECA35A3</string>
 			<key>IDESourceControlWCCName</key>
 			<string>C4iOS</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7E1B41BCE70ED8D68DD8644B1034E17DA0DE4B94</string>
+			<key>IDESourceControlWCCName</key>
+			<string>C4Twitter</string>
 		</dict>
 	</array>
 </dict>

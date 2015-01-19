@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import TwitterKit
 import Crashlytics
 
 @UIApplicationMain
@@ -14,9 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Crashlytics.startWithAPIKey("0da89dd25bdefa8e8ec25b2e40e114a6f2af7fea")
+        Fabric.with([Crashlytics(), Twitter()])
         return true
     }
 

@@ -1,0 +1,112 @@
+{
+    contributors = "<null>";
+    coordinates = "<null>";
+    "created_at" = "Mon Jan 05 04:52:08 +0000 2015";
+    entities =         {
+        hashtags =             (
+        );
+        symbols =             (
+        );
+        urls =             (
+        );
+        "user_mentions" =             (
+        {
+            id = 353789193;
+            "id_str" = 353789193;
+            indices =                     (
+            0,
+            16
+            );
+            name = "Startup L. Jackson";
+            "screen_name" = StartupLJackson;
+        },
+        {
+            id = 5943622;
+            "id_str" = 5943622;
+            indices =                     (
+            17,
+            24
+            );
+            name = "Marc Andreessen";
+            "screen_name" = pmarca;
+        }
+        );
+    };
+    "favorite_count" = 2;
+    favorited = 0;
+    geo = "<null>";
+    id = 551964342501912576;
+    "id_str" = 551964342501912576;
+    "in_reply_to_screen_name" = StartupLJackson;
+    "in_reply_to_status_id" = 551951728921169920;
+    "in_reply_to_status_id_str" = 551951728921169920;
+    "in_reply_to_user_id" = 353789193;
+    "in_reply_to_user_id_str" = 353789193;
+    lang = en;
+    place = "<null>";
+    "retweet_count" = 0;
+    retweeted = 0;
+    source = "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>";
+    text = "@StartupLJackson @pmarca waiting for the counterstrike";
+    truncated = 0;
+    user =         {
+        "contributors_enabled" = 0;
+        "created_at" = "Fri Jul 08 17:48:32 +0000 2011";
+        "default_profile" = 1;
+        "default_profile_image" = 0;
+        description = "Code, Creatively. An open-source API for iOS.";
+        entities =             {
+            description =                 {
+                urls =                     (
+                );
+            };
+            url =                 {
+                urls =                     (
+                {
+                    "display_url" = "c4ios.com";
+                    "expanded_url" = "http://www.c4ios.com";
+                    indices =                             (
+                    0,
+                    22
+                    );
+                    url = "http://t.co/RrJgVDFuJU";
+                }
+                );
+            };
+        };
+        "favourites_count" = 144;
+        "follow_request_sent" = "<null>";
+        "followers_count" = 294;
+        following = "<null>";
+        "friends_count" = 103;
+        "geo_enabled" = 0;
+        id = 331767392;
+        "id_str" = 331767392;
+        "is_translation_enabled" = 0;
+        "is_translator" = 0;
+        lang = en;
+        "listed_count" = 10;
+        location = "vancouver, canada";
+        name = cocoafor;
+        notifications = "<null>";
+        "profile_background_color" = C0DEED;
+        "profile_background_image_url" = "http://abs.twimg.com/images/themes/theme1/bg.png";
+        "profile_background_image_url_https" = "https://abs.twimg.com/images/themes/theme1/bg.png";
+        "profile_background_tile" = 0;
+        "profile_image_url" = "http://pbs.twimg.com/profile_images/2547988490/vgrbkra2tcq3kdvludnt_normal.png";
+        "profile_image_url_https" = "https://pbs.twimg.com/profile_images/2547988490/vgrbkra2tcq3kdvludnt_normal.png";
+        "profile_link_color" = 0084B4;
+        "profile_location" = "<null>";
+        "profile_sidebar_border_color" = C0DEED;
+        "profile_sidebar_fill_color" = DDEEF6;
+        "profile_text_color" = 333333;
+        "profile_use_background_image" = 1;
+        protected = 0;
+        "screen_name" = CocoaFor;
+        "statuses_count" = 626;
+        "time_zone" = "Buenos Aires";
+        url = "http://t.co/RrJgVDFuJU";
+        "utc_offset" = "-10800";
+        verified = 0;
+    };
+}
