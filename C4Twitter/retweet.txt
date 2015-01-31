@@ -1,0 +1,349 @@
+{
+    contributors = "<null>";
+    coordinates = "<null>";
+    "created_at" = "Fri Jan 30 16:03:30 +0000 2015";
+    entities =         {
+        hashtags =             (
+        {
+            indices =                     (
+            36,
+            42
+            );
+            text = res15;
+        }
+        );
+        symbols =             (
+        );
+        urls =             (
+        {
+            "display_url" = "goo.gl/txBwDK";
+            "expanded_url" = "http://goo.gl/txBwDK";
+            indices =                     (
+            43,
+            65
+            );
+            url = "http://t.co/YfGzmS1iyU";
+        }
+        );
+        "user_mentions" =             (
+        {
+            id = 259716338;
+            "id_str" = 259716338;
+            indices =                     (
+            3,
+            15
+            );
+            name = resonate;
+            "screen_name" = "resonate_io";
+        },
+        {
+            id = 18140773;
+            "id_str" = 18140773;
+            indices =                     (
+            78,
+            87
+            );
+            name = FIELD;
+            "screen_name" = "field_io";
+        },
+        {
+            id = 41000673;
+            "id_str" = 41000673;
+            indices =                     (
+            88,
+            100
+            );
+            name = "Antar Walker";
+            "screen_name" = antarwalker;
+        },
+        {
+            id = 155670641;
+            "id_str" = 155670641;
+            indices =                     (
+            101,
+            112
+            );
+            name = "Matt Whitewood";
+            "screen_name" = mwhitewood;
+        },
+        {
+            id = 335882175;
+            "id_str" = 335882175;
+            indices =                     (
+            113,
+            124
+            );
+            name = "Fred Huergo";
+            "screen_name" = FredHuergo;
+        },
+        {
+            id = 2377594406;
+            "id_str" = 2377594406;
+            indices =                     (
+            125,
+            138
+            );
+            name = "Owen Hindley";
+            "screen_name" = "owen_hindley";
+        },
+        {
+            id = 158517286;
+            "id_str" = 158517286;
+            indices =                     (
+            139,
+            140
+            );
+            name = "Ragnar Hrafnkelsson";
+            "screen_name" = ragnaringi;
+        }
+        );
+    };
+    "favorite_count" = 0;
+    favorited = 0;
+    geo = "<null>";
+    id = 561192990941532161;
+    "id_str" = 561192990941532161;
+    "in_reply_to_screen_name" = "<null>";
+    "in_reply_to_status_id" = "<null>";
+    "in_reply_to_status_id_str" = "<null>";
+    "in_reply_to_user_id" = "<null>";
+    "in_reply_to_user_id_str" = "<null>";
+    lang = en;
+    place = "<null>";
+    "possibly_sensitive" = 0;
+    "retweet_count" = 6;
+    retweeted = 0;
+    "retweeted_status" =         {
+        contributors = "<null>";
+        coordinates = "<null>";
+        "created_at" = "Fri Jan 30 12:51:41 +0000 2015";
+        entities =             {
+            hashtags =                 (
+            {
+                indices =                         (
+                19,
+                25
+                );
+                text = res15;
+            }
+            );
+            symbols =                 (
+            );
+            urls =                 (
+            {
+                "display_url" = "goo.gl/txBwDK";
+                "expanded_url" = "http://goo.gl/txBwDK";
+                indices =                         (
+                26,
+                48
+                );
+                url = "http://t.co/YfGzmS1iyU";
+            }
+            );
+            "user_mentions" =                 (
+            {
+                id = 18140773;
+                "id_str" = 18140773;
+                indices =                         (
+                61,
+                70
+                );
+                name = FIELD;
+                "screen_name" = "field_io";
+            },
+            {
+                id = 41000673;
+                "id_str" = 41000673;
+                indices =                         (
+                71,
+                83
+                );
+                name = "Antar Walker";
+                "screen_name" = antarwalker;
+            },
+            {
+                id = 155670641;
+                "id_str" = 155670641;
+                indices =                         (
+                84,
+                95
+                );
+                name = "Matt Whitewood";
+                "screen_name" = mwhitewood;
+            },
+            {
+                id = 335882175;
+                "id_str" = 335882175;
+                indices =                         (
+                96,
+                107
+                );
+                name = "Fred Huergo";
+                "screen_name" = FredHuergo;
+            },
+            {
+                id = 2377594406;
+                "id_str" = 2377594406;
+                indices =                         (
+                108,
+                121
+                );
+                name = "Owen Hindley";
+                "screen_name" = "owen_hindley";
+            },
+            {
+                id = 158517286;
+                "id_str" = 158517286;
+                indices =                         (
+                122,
+                133
+                );
+                name = "Ragnar Hrafnkelsson";
+                "screen_name" = ragnaringi;
+            }
+            );
+        };
+        "favorite_count" = 3;
+        favorited = 0;
+        geo = "<null>";
+        id = 561144719582175232;
+        "id_str" = 561144719582175232;
+        "in_reply_to_screen_name" = "<null>";
+        "in_reply_to_status_id" = "<null>";
+        "in_reply_to_status_id_str" = "<null>";
+        "in_reply_to_user_id" = "<null>";
+        "in_reply_to_user_id_str" = "<null>";
+        lang = en;
+        place = "<null>";
+        "possibly_sensitive" = 0;
+        "retweet_count" = 6;
+        retweeted = 0;
+        source = "<a href=\"http://itunes.apple.com/us/app/twitter/id409789998?mt=12\" rel=\"nofollow\">Twitter for Mac</a>";
+        text = "One step closer to #res15 http://t.co/YfGzmS1iyU / Thanks to @field_io @antarwalker @mwhitewood @fredhuergo @owen_hindley @ragnaringi";
+        truncated = 0;
+        user =             {
+            "contributors_enabled" = 0;
+            "created_at" = "Wed Mar 02 13:07:29 +0000 2011";
+            "default_profile" = 0;
+            "default_profile_image" = 0;
+            description = "Belgrade New Media Festival - Bringing together artists to drive a forward-looking debate on the position of technology in art and culture.\n\ntag: #res15";
+            entities =                 {
+                description =                     {
+                    urls =                         (
+                    );
+                };
+                url =                     {
+                    urls =                         (
+                    {
+                        "display_url" = "resonate.io";
+                        "expanded_url" = "http://resonate.io";
+                        indices =                                 (
+                        0,
+                        22
+                        );
+                        url = "http://t.co/hmqsjGyxoT";
+                    }
+                    );
+                };
+            };
+            "favourites_count" = 353;
+            "follow_request_sent" = "<null>";
+            "followers_count" = 6466;
+            following = "<null>";
+            "friends_count" = 363;
+            "geo_enabled" = 0;
+            id = 259716338;
+            "id_str" = 259716338;
+            "is_translation_enabled" = 0;
+            "is_translator" = 0;
+            lang = en;
+            "listed_count" = 278;
+            location = "Belgrade, 13-18 April 2015";
+            name = resonate;
+            notifications = "<null>";
+            "profile_background_color" = 000000;
+            "profile_background_image_url" = "http://pbs.twimg.com/profile_background_images/302593552/bg-pattern.png";
+            "profile_background_image_url_https" = "https://pbs.twimg.com/profile_background_images/302593552/bg-pattern.png";
+            "profile_background_tile" = 0;
+            "profile_banner_url" = "https://pbs.twimg.com/profile_banners/259716338/1418398584";
+            "profile_image_url" = "http://pbs.twimg.com/profile_images/543428848092594176/lg27PCy2_normal.png";
+            "profile_image_url_https" = "https://pbs.twimg.com/profile_images/543428848092594176/lg27PCy2_normal.png";
+            "profile_link_color" = 000000;
+            "profile_location" = "<null>";
+            "profile_sidebar_border_color" = FFFFFF;
+            "profile_sidebar_fill_color" = FFFFFF;
+            "profile_text_color" = 474747;
+            "profile_use_background_image" = 0;
+            protected = 0;
+            "screen_name" = "resonate_io";
+            "statuses_count" = 1089;
+            "time_zone" = Belgrade;
+            url = "http://t.co/hmqsjGyxoT";
+            "utc_offset" = 3600;
+            verified = 0;
+        };
+    };
+    source = "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>";
+    text = "RT @resonate_io: One step closer to #res15 http://t.co/YfGzmS1iyU / Thanks to @field_io @antarwalker @mwhitewood @fredhuergo @owen_hindley \U2026";
+    truncated = 0;
+    user =         {
+        "contributors_enabled" = 0;
+        "created_at" = "Fri Jul 08 17:48:32 +0000 2011";
+        "default_profile" = 1;
+        "default_profile_image" = 0;
+        description = "Code, Creatively. An open-source API for iOS.";
+        entities =             {
+            description =                 {
+                urls =                     (
+                );
+            };
+            url =                 {
+                urls =                     (
+                {
+                    "display_url" = "c4ios.com";
+                    "expanded_url" = "http://www.c4ios.com";
+                    indices =                             (
+                    0,
+                    22
+                    );
+                    url = "http://t.co/RrJgVDFuJU";
+                }
+                );
+            };
+        };
+        "favourites_count" = 150;
+        "follow_request_sent" = "<null>";
+        "followers_count" = 290;
+        following = "<null>";
+        "friends_count" = 103;
+        "geo_enabled" = 0;
+        id = 331767392;
+        "id_str" = 331767392;
+        "is_translation_enabled" = 0;
+        "is_translator" = 0;
+        lang = en;
+        "listed_count" = 11;
+        location = "vancouver, canada";
+        name = cocoafor;
+        notifications = "<null>";
+        "profile_background_color" = C0DEED;
+        "profile_background_image_url" = "http://abs.twimg.com/images/themes/theme1/bg.png";
+        "profile_background_image_url_https" = "https://abs.twimg.com/images/themes/theme1/bg.png";
+        "profile_background_tile" = 0;
+        "profile_image_url" = "http://pbs.twimg.com/profile_images/2547988490/vgrbkra2tcq3kdvludnt_normal.png";
+        "profile_image_url_https" = "https://pbs.twimg.com/profile_images/2547988490/vgrbkra2tcq3kdvludnt_normal.png";
+        "profile_link_color" = 0084B4;
+        "profile_location" = "<null>";
+        "profile_sidebar_border_color" = C0DEED;
+        "profile_sidebar_fill_color" = DDEEF6;
+        "profile_text_color" = 333333;
+        "profile_use_background_image" = 1;
+        protected = 0;
+        "screen_name" = CocoaFor;
+        "statuses_count" = 632;
+        "time_zone" = "Buenos Aires";
+        url = "http://t.co/RrJgVDFuJU";
+        "utc_offset" = "-10800";
+        verified = 0;
+    };
+}

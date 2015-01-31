@@ -13,7 +13,8 @@
 		1F7230FB1A6CCE8B00F2986B /* C4UI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D91D8D641A69DAAA00A17464 /* C4UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F7230FC1A6CCE8E00F2986B /* C4Core.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D91D8D681A69DAAA00A17464 /* C4Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F7230FD1A6CCE9100F2986B /* C4Animation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D91D8D6C1A69DAAA00A17464 /* C4Animation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F7231001A6D6B8600F2986B /* tweet.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F7230FF1A6D6B8600F2986B /* tweet.strings */; };
+		1FCE61781A7CB8180044A7F6 /* retweet.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1F7230FF1A6D6B8600F2986B /* retweet.txt */; };
+		1FCE617A1A7CCB460044A7F6 /* tweet.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1FCE61791A7CCB460044A7F6 /* tweet.txt */; };
 		D91D8C451A69D71E00A17464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91D8C441A69D71E00A17464 /* AppDelegate.swift */; };
 		D91D8C471A69D71E00A17464 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91D8C461A69D71E00A17464 /* ViewController.swift */; };
 		D91D8C4A1A69D71E00A17464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91D8C481A69D71E00A17464 /* Main.storyboard */; };
@@ -118,7 +119,8 @@
 		1F4583351A6A220D00BF6AFB /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		1F4583371A6A229700BF6AFB /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		1F4583381A6A229700BF6AFB /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
-		1F7230FF1A6D6B8600F2986B /* tweet.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = tweet.strings; sourceTree = "<group>"; };
+		1F7230FF1A6D6B8600F2986B /* retweet.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = retweet.txt; sourceTree = "<group>"; };
+		1FCE61791A7CCB460044A7F6 /* tweet.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tweet.txt; sourceTree = "<group>"; };
 		D91D8C3F1A69D71E00A17464 /* C4Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C4Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91D8C431A69D71E00A17464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D91D8C441A69D71E00A17464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,7 +183,8 @@
 			children = (
 				D91D8C441A69D71E00A17464 /* AppDelegate.swift */,
 				D91D8C461A69D71E00A17464 /* ViewController.swift */,
-				1F7230FF1A6D6B8600F2986B /* tweet.strings */,
+				1F7230FF1A6D6B8600F2986B /* retweet.txt */,
+				1FCE61791A7CCB460044A7F6 /* tweet.txt */,
 				D91D8C481A69D71E00A17464 /* Main.storyboard */,
 				D91D8C4B1A69D71E00A17464 /* Images.xcassets */,
 				D91D8C4D1A69D71E00A17464 /* LaunchScreen.xib */,
@@ -369,7 +372,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F45833A1A6A229700BF6AFB /* TwitterKitResources.bundle in Resources */,
-				1F7231001A6D6B8600F2986B /* tweet.strings in Resources */,
+				1FCE61781A7CB8180044A7F6 /* retweet.txt in Resources */,
+				1FCE617A1A7CCB460044A7F6 /* tweet.txt in Resources */,
 				D91D8C4A1A69D71E00A17464 /* Main.storyboard in Resources */,
 				D91D8C4F1A69D71E00A17464 /* LaunchScreen.xib in Resources */,
 				D91D8C4C1A69D71E00A17464 /* Images.xcassets in Resources */,
