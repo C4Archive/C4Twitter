@@ -12,15 +12,106 @@ import Social
 import Accounts
 import TwitterKit
 
-class ViewController: UIViewController {
-//    var tweets = [Tweet]()
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var jsonData : NSMutableArray?
+    var layout = UICollectionViewFlowLayout()
+    var collectionView : UICollectionView?
+    var tweetsView : UITableView?
+    var tweets = [NSDictionary]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        grabTweets()
+        loadTweets()
+        layout.scrollDirection = .Vertical
+        tweetsView = UITableView(frame: view.frame)
+        tweetsView?.allowsSelection = false
+        tweetsView?.registerClass(TweetCell.self, forCellReuseIdentifier: "tweetTableViewCell")
+        tweetsView?.dataSource = self
+        tweetsView?.delegate = self
+        tweetsView?.reloadData()
+        tweetsView?.backgroundColor = .lightGrayColor()
+        view.addSubview(tweetsView!)
+        tweetsView?.separatorStyle = .None
+        tweetsView?.rowHeight = 164.0
+        tweetsView?.beginUpdates()
+        tweetsView?.reloadData()
+        tweetsView?.endUpdates()
     }
     
+    func loadTweets() {
+//        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+//        let destinationPath = documentsPath.stringByAppendingPathComponent("/sample.plist")
+        let destinationPath = NSBundle.mainBundle().pathForResource("sample", ofType: "plist")!
+
+        if let arr = NSArray(contentsOfFile: destinationPath) {
+            tweets = arr as [NSDictionary]
+        }
+    }
+
+//MARK: COLLECTIONVIEW
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tweets.count
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var tweet : TweetCell
+        if let dequeuedCell : TweetCell = tableView.dequeueReusableCellWithIdentifier("tweetTableViewCell") as? TweetCell {
+            tweet = dequeuedCell
+        } else {
+            tweet = TweetCell(style: UITableViewCellStyle.Default, reuseIdentifier: "tweetTableViewCell")
+        }
+        
+        tweet.tvc = self.tweetsView
+        
+        let dict : Dictionary = tweets[indexPath.indexAtPosition(1)]
+        if let text = dict["text"] as? String {
+            tweet.textLabel?.attributedText = parseText(text)
+        }
+        
+        if let img = dict["userImageURL"] as? String {
+            tweet.imageURL = img
+        }
+        return tweet
+    }
+    
+    func parseText(text: String) -> NSAttributedString {
+        var components = text.componentsSeparatedByString(" ")
+        var rt = false
+        if components[0] == "RT" {
+            components[1] = "“"+components[1]
+            components[components.count-1] = components[components.count-1] + "”"
+        }
+        var completeString = NSMutableAttributedString()
+        for string in components {
+            var attributedString = NSMutableAttributedString(string: string+" ")
+            
+            if string.hasPrefix("@") || string.hasPrefix("#") {
+                attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.darkGrayColor(), range: NSMakeRange(0, countElements(string)))
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont(name: "Helvetica-Light", size: 16.0)!, range: NSMakeRange(0, countElements(string)))
+            }
+            
+            if string.hasPrefix("http:") || string.hasPrefix("www.") {
+                attributedString.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.StyleThick.rawValue, range: NSMakeRange(0, countElements(string)))
+            }
+            
+            completeString.appendAttributedString(attributedString)
+        }
+        
+        var paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 6
+        paragraphStyle.alignment = .Center
+        
+        completeString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, completeString.length))
+
+        
+        return completeString as NSAttributedString
+    }
+        
     func grabTweets() {
         let twitter = Twitter.sharedInstance()
         
@@ -57,7 +148,6 @@ class ViewController: UIViewController {
                                 error: &jsonError) as? NSMutableArray
                         println("err: \(jsonError)")
                         self.parseJSON()
-//                        self.printJSON()
                         self.saveJSON()
                     }
                     else {
@@ -70,8 +160,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    var tweets = [NSDictionary]()
     
     func parseJSON() {
         if let rawTweets = self.jsonData {

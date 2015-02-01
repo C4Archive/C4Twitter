@@ -63,5 +63,9 @@
 	</array>
 	<key>UIFileSharingEnabled</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FreightText-Light.ttf</string>
+	</array>
 </dict>
 </plist>
