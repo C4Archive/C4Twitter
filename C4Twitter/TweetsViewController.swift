@@ -9,8 +9,14 @@ class TweetsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(20, 0, 0, 0)
+        self.refreshControl?.addTarget(self, action: Selector("refresh"), forControlEvents:.ValueChanged)
         loadTweets()
-        grabTweets()
+    }
+    
+    func refresh() {
+        fetchTweets()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,7 +75,7 @@ class TweetsViewController: UITableViewController {
         return completeString as NSAttributedString
     }
         
-    func grabTweets() {
+    func fetchTweets() {
         let twitter = Twitter.sharedInstance()
         
         twitter.logInGuestWithCompletion { (session: TWTRGuestSession!, error: NSError!) in
@@ -105,6 +111,7 @@ class TweetsViewController: UITableViewController {
                     self.parseJSON(array)
                     self.saveTweets()
                     self.tableView?.reloadData()
+                    self.refreshControl?.endRefreshing()
                 }
             }
         }
@@ -152,6 +159,8 @@ class TweetsViewController: UITableViewController {
         if let newTweets = newTweets {
             tweets = newTweets
             self.tableView?.reloadData()
+        } else {
+            fetchTweets()
         }
     }
 }
