@@ -1,11 +1,3 @@
-//
-//  TweetCell.swift
-//  C4Twitter
-//
-//  Created by travis on 2015-01-31.
-//  Copyright (c) 2015 C4. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import C4Core
@@ -14,25 +6,9 @@ import C4UI
 
 public class TweetCell : UITableViewCell {
     internal var shouldAddHeader = true
-    public weak var tvc : UITableView?
-
-    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = .clearColor()
-        self.textLabel?.textColor = .whiteColor()
-        self.textLabel?.font = UIFont(name: "FreightTextLight", size: 18)
-        self.textLabel?.textAlignment = .Center
-    }
     
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        textLabel?.numberOfLines = 10
-        textLabel?.sizeToFit()
-        var f = textLabel!.frame
-        textLabel!.frame = CGRectMake(11, 28, UIScreen.mainScreen().bounds.size.width-44, f.height)
-        let contentFrame = CGRectIntersection(contentView.frame, textLabel!.frame)
-        contentView.frame = contentFrame
-    }
+    @IBOutlet public weak var bodyLabel : UILabel?
+    @IBOutlet public weak var tvc : UITableView?
     
     public var imageURL : String = "" {
         didSet {
@@ -53,10 +29,6 @@ public class TweetCell : UITableViewCell {
     public var date : String = "October 21, 1979"
     public var favCount = -1
     public var rtCount = -1
-    
-    public required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
     
     var bg = C4Rectangle()
     var scrollview = UIScrollView()

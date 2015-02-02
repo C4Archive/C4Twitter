@@ -1,72 +1,32 @@
-//
-//  ViewController.swift
-//  C4Twitter
-//
-//  Created by travis on 2015-01-16.
-//  Copyright (c) 2015 C4. All rights reserved.
-//
-
 import UIKit
 import C4Core
 import Social
 import Accounts
 import TwitterKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var layout = UICollectionViewFlowLayout()
-    var collectionView : UICollectionView?
-    var tweetsView : UITableView?
+class TweetsViewController: UITableViewController {
     var tweets = [Tweet]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         grabTweets()
-        
-        layout.scrollDirection = .Vertical
-        tweetsView = UITableView(frame: view.frame)
-        tweetsView?.allowsSelection = false
-        tweetsView?.registerClass(TweetCell.self, forCellReuseIdentifier: "tweetTableViewCell")
-        tweetsView?.dataSource = self
-        tweetsView?.delegate = self
-        tweetsView?.backgroundColor = .lightGrayColor()
-        tweetsView?.separatorStyle = .None
-        tweetsView?.rowHeight = 164.0
-        view.addSubview(tweetsView!)
     }
     
-    func loadTweets() {
-//        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-//        let destinationPath = documentsPath.stringByAppendingPathComponent("/sample.plist")
-//        let destinationPath = NSBundle.mainBundle().pathForResource("sample", ofType: "plist")!
-//
-//        if let arr = NSArray(contentsOfFile: destinationPath) {
-//            tweets = arr as [NSDictionary]
-//        }
-    }
-
-//MARK: COLLECTIONVIEW
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweets.count
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var tweetCell : TweetCell
-        if let dequeuedCell : TweetCell = tableView.dequeueReusableCellWithIdentifier("tweetTableViewCell") as? TweetCell {
-            tweetCell = dequeuedCell
-        } else {
-            tweetCell = TweetCell(style: UITableViewCellStyle.Default, reuseIdentifier: "tweetTableViewCell")
-        }
-        
-        tweetCell.tvc = self.tweetsView
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var tweetCell = tableView.dequeueReusableCellWithIdentifier("tweetTableViewCell") as TweetCell
+        tweetCell.tvc = self.tableView
         
         let tweet = tweets[indexPath.row]
         if let text = tweet.text {
-            tweetCell.textLabel?.attributedText = parseText(text)
+            tweetCell.bodyLabel?.attributedText = parseText(text)
         }
         
         if let img = tweet.user?.imageURL {
@@ -115,14 +75,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             // Swift
             let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
             let params = ["screen_name": "cocoafor", "include_rts":"true", "count" : "100"]
-            
-            //use: since_id, to grab all the newest posts
-            //save data to a plist
-            //on viewDidLoad retrieve the list
-            //check for new posts (i.e. by retrieving newest id)
-            //append posts (if any)
-            //load data
-            //save data on background thread to plist
 
             var clientError : NSError?
             
@@ -130,33 +82,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 "GET", URL: statusesShowEndpoint, parameters: params,
                 error: &clientError)
             
-            if request != nil {
-                Twitter.sharedInstance().APIClient.sendTwitterRequest(request) {
-                    (response, data, connectionError) -> Void in
-                    if (connectionError == nil) {
-                        var jsonError : NSError?
-                        
-                        let d : NSArray = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as NSArray
-                        
-                        var jsonData = NSJSONSerialization.JSONObjectWithData(data,
-                            options: nil,
-                            error: &jsonError) as? NSMutableArray
-                        if jsonError != nil {
-                            println("err: \(jsonError)")
-                        }
-                        if let array = jsonData {
-                            self.parseJSON(array)
-                            self.saveJSON(array)
-                            self.tweetsView?.reloadData()
-                        }
-                    }
-                    else {
-                        println("Error: \(connectionError)")
-                    }
-                }
-            }
-            else {
+            if request == nil {
                 println("Error: \(clientError)")
+                return
+            }
+            Twitter.sharedInstance().APIClient.sendTwitterRequest(request) {
+                (response, data, connectionError) -> Void in
+                if (connectionError != nil) {
+                    println("Error: \(connectionError)")
+                    return
+                }
+                
+                var jsonError : NSError?
+                var jsonData = NSJSONSerialization.JSONObjectWithData(data,
+                    options: nil,
+                    error: &jsonError) as? NSMutableArray
+                
+                if jsonError != nil {
+                    println("err: \(jsonError)")
+                }
+                if let array = jsonData {
+                    self.parseJSON(array)
+                    self.saveJSON(array)
+                    self.tableView?.reloadData()
+                }
             }
         }
     }
@@ -196,10 +145,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        let arr = self.tweets as NSArray
 //        let b = arr.writeToFile(destinationPath, atomically: true)
 //        if b { println("done") }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
