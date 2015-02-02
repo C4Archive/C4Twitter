@@ -9,6 +9,7 @@ class TweetsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadTweets()
         grabTweets()
     }
     
@@ -72,7 +73,6 @@ class TweetsViewController: UITableViewController {
         let twitter = Twitter.sharedInstance()
         
         twitter.logInGuestWithCompletion { (session: TWTRGuestSession!, error: NSError!) in
-            // Swift
             let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
             let params = ["screen_name": "cocoafor", "include_rts":"true", "count" : "100"]
 
@@ -103,7 +103,7 @@ class TweetsViewController: UITableViewController {
                 }
                 if let array = jsonData {
                     self.parseJSON(array)
-                    self.saveJSON(array)
+                    self.saveTweets()
                     self.tableView?.reloadData()
                 }
             }
@@ -139,11 +139,19 @@ class TweetsViewController: UITableViewController {
         return parsedPath
     }
     
-    func saveJSON(array: NSMutableArray) {
-//        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-//        let destinationPath = documentsPath.stringByAppendingPathComponent("/sample.plist")
-//        let arr = self.tweets as NSArray
-//        let b = arr.writeToFile(destinationPath, atomically: true)
-//        if b { println("done") }
+    func saveTweets() {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let tweetsPath = documentsPath.stringByAppendingPathComponent("/tweets.archive")
+        NSKeyedArchiver.archiveRootObject(tweets, toFile: tweetsPath)
+    }
+    
+    func loadTweets() {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let tweetsPath = documentsPath.stringByAppendingPathComponent("/tweets.archive")
+        let newTweets = NSKeyedUnarchiver.unarchiveObjectWithFile(tweetsPath) as? [Tweet]
+        if let newTweets = newTweets {
+            tweets = newTweets
+            self.tableView?.reloadData()
+        }
     }
 }
