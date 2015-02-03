@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rdd-Rz-XpW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="FreightText-Light.ttf">
@@ -25,24 +25,67 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Vr-BZ-zBW" id="Xcn-j4-4uB">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZA-c6-Ruc">
-                                            <rect key="frame" x="8" y="52" width="584" height="104"/>
-                                            <fontDescription key="fontDescription" name="FreightTextLight" family="FreightText" pointSize="18"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Sc-AU-jKO">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="47"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ekX-09-UIr">
+                                                    <rect key="frame" x="268" y="15" width="64" height="64"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="64" id="CUd-aT-mg8"/>
+                                                        <constraint firstAttribute="height" constant="64" id="cX3-PJ-RNm"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CocoaFor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00U-g3-ECF">
+                                                    <rect key="frame" x="20" y="15" width="69" height="18"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan 21, 2015" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yaa-me-trr">
+                                                    <rect key="frame" x="492" y="15" width="88" height="18"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                    <color key="textColor" red="0.40000000000000002" green="0.40392156862745099" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.24313725489999999" green="0.2470588235" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="00U-g3-ECF" secondAttribute="centerY" id="AAF-4F-Qy2"/>
+                                                <constraint firstItem="ekX-09-UIr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="00U-g3-ECF" secondAttribute="trailing" constant="8" id="C5H-8e-K86"/>
+                                                <constraint firstAttribute="height" constant="47" id="DnX-Xx-cIw"/>
+                                                <constraint firstAttribute="centerX" secondItem="ekX-09-UIr" secondAttribute="centerX" id="FZY-D6-Yub"/>
+                                                <constraint firstItem="00U-g3-ECF" firstAttribute="leading" secondItem="4Sc-AU-jKO" secondAttribute="leading" constant="20" id="Jlr-js-fRW"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yaa-me-trr" secondAttribute="trailing" constant="20" id="KLR-Ce-e35"/>
+                                                <constraint firstAttribute="centerY" secondItem="Yaa-me-trr" secondAttribute="centerY" id="LhT-u9-ri8"/>
+                                                <constraint firstItem="Yaa-me-trr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ekX-09-UIr" secondAttribute="trailing" constant="8" id="Ra6-W9-zLh"/>
+                                                <constraint firstItem="ekX-09-UIr" firstAttribute="centerY" secondItem="4Sc-AU-jKO" secondAttribute="bottom" id="lbD-Yc-S9g"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZA-c6-Ruc">
+                                            <rect key="frame" x="20" y="99" width="560" height="45"/>
+                                            <fontDescription key="fontDescription" name="FreightTextLight" family="FreightText" pointSize="30"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.27058823529411763" green="0.27450980392156865" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="TZA-c6-Ruc" secondAttribute="trailing" id="Udb-Fp-Xfd"/>
-                                        <constraint firstItem="TZA-c6-Ruc" firstAttribute="leading" secondItem="Xcn-j4-4uB" secondAttribute="leadingMargin" id="VXD-CP-G8J"/>
-                                        <constraint firstItem="TZA-c6-Ruc" firstAttribute="top" secondItem="Xcn-j4-4uB" secondAttribute="topMargin" constant="44" id="aTj-8Z-Gnn"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="TZA-c6-Ruc" secondAttribute="bottom" id="c9H-lJ-DgR"/>
+                                        <constraint firstItem="4Sc-AU-jKO" firstAttribute="top" secondItem="Xcn-j4-4uB" secondAttribute="top" id="43D-Dk-ScG"/>
+                                        <constraint firstItem="TZA-c6-Ruc" firstAttribute="top" secondItem="ekX-09-UIr" secondAttribute="bottom" constant="20" id="bc3-mI-p4s"/>
+                                        <constraint firstAttribute="trailing" secondItem="4Sc-AU-jKO" secondAttribute="trailing" id="gnm-Zt-0Tl"/>
+                                        <constraint firstAttribute="bottom" secondItem="TZA-c6-Ruc" secondAttribute="bottom" constant="20" id="iSM-bC-1BK"/>
+                                        <constraint firstItem="4Sc-AU-jKO" firstAttribute="leading" secondItem="Xcn-j4-4uB" secondAttribute="leading" id="ot4-P6-2ZT"/>
+                                        <constraint firstItem="TZA-c6-Ruc" firstAttribute="leading" secondItem="Xcn-j4-4uB" secondAttribute="leading" constant="20" id="qDS-Ro-gGQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="TZA-c6-Ruc" secondAttribute="trailing" constant="20" id="vAC-ae-U4e"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="bodyLabel" destination="TZA-c6-Ruc" id="G2d-xy-SNu"/>
-                                    <outlet property="tvc" destination="SIm-iq-vJN" id="S20-Q0-bES"/>
+                                    <outlet property="dateLabel" destination="Yaa-me-trr" id="aqO-wF-1nF"/>
+                                    <outlet property="headerView" destination="4Sc-AU-jKO" id="936-1Y-6ox"/>
+                                    <outlet property="userImageView" destination="ekX-09-UIr" id="riQ-hT-cRL"/>
+                                    <outlet property="userLabel" destination="00U-g3-ECF" id="eQh-zf-jEh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

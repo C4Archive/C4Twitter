@@ -11,8 +11,14 @@ class TweetsViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(20, 0, 0, 0)
+        self.tableView.estimatedRowHeight = 100.0;
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.refreshControl?.addTarget(self, action: Selector("refresh"), forControlEvents:.ValueChanged)
         loadTweets()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.tableView.reloadData()
     }
     
     func refresh() {
@@ -28,51 +34,9 @@ class TweetsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var tweetCell = tableView.dequeueReusableCellWithIdentifier("tweetTableViewCell") as TweetCell
-        tweetCell.tvc = self.tableView
-        
-        let tweet = tweets[indexPath.row]
-        if let text = tweet.text {
-            tweetCell.bodyLabel?.attributedText = parseText(text)
-        }
-        
-        if let img = tweet.user?.imageURL {
-            tweetCell.imageURL = img
-        }
-        return tweetCell
-    }
-    
-    func parseText(text: String) -> NSAttributedString {
-        var components = text.componentsSeparatedByString(" ")
-        var rt = false
-        if components[0] == "RT" {
-            components[1] = "“"+components[1]
-            components[components.count-1] = components[components.count-1] + "”"
-        }
-        var completeString = NSMutableAttributedString()
-        for string in components {
-            var attributedString = NSMutableAttributedString(string: string+" ")
-            
-            if string.hasPrefix("@") || string.hasPrefix("#") {
-                attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.darkGrayColor(), range: NSMakeRange(0, countElements(string)))
-                attributedString.addAttribute(NSFontAttributeName, value: UIFont(name: "Helvetica-Light", size: 16.0)!, range: NSMakeRange(0, countElements(string)))
-            }
-            
-            if string.hasPrefix("http:") || string.hasPrefix("www.") {
-                attributedString.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.StyleThick.rawValue, range: NSMakeRange(0, countElements(string)))
-            }
-            
-            completeString.appendAttributedString(attributedString)
-        }
-        
-        var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 6
-        paragraphStyle.alignment = .Center
-        
-        completeString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, completeString.length))
-
-        
-        return completeString as NSAttributedString
+        var cell = tableView.dequeueReusableCellWithIdentifier("tweetTableViewCell") as TweetCell
+        cell.tweet = tweets[indexPath.row]
+        return cell
     }
         
     func fetchTweets() {

@@ -5,122 +5,82 @@ import C4Animation
 import C4UI
 
 public class TweetCell : UITableViewCell {
-    internal var shouldAddHeader = true
+    let tagColor = UIColor(red: 0.510, green: 0.541, blue: 0.561, alpha: 1.0)
     
-    @IBOutlet public weak var bodyLabel : UILabel?
-    @IBOutlet public weak var tvc : UITableView?
+    @IBOutlet weak var headerView : UIView?
+    @IBOutlet weak var userLabel : UILabel?
+    @IBOutlet weak var dateLabel : UILabel?
+    @IBOutlet weak var userImageView : UIImageView?
+    @IBOutlet weak var bodyLabel : UILabel?
+
+    public override func awakeFromNib() {
+        userImageView?.layer.cornerRadius = userImageView!.bounds.width/2
+        userImageView?.layer.masksToBounds = true
+    }
     
-    public var imageURL : String = "" {
+    var tweet : Tweet? {
         didSet {
-            if shouldAddHeader {
-                self.twitterCellHeader()
-                shouldAddHeader = false
-            }
+            updateContents()
         }
     }
-    public var userURL : String = ""
-    public var name : String = "name" {
-        didSet {
+    
+    func updateContents() {
+        userLabel?.text = tweet?.user?.name
+        dateLabel?.text = tweet?.date
+        bodyLabel?.attributedText = attributedText()
+        
+        // FIXME: this is really inefficient when scrolling, we need to load the images on the background
+        if let imageURLString = tweet?.user?.imageURL {
+            if let url = NSURL(string: imageURLString) {
+                var image = C4Image(url: url)
+                userImageView?.image = image.uiimage
+            } else {
+                userImageView?.image = nil
+            }
+        } else {
+            userImageView?.image = nil
+        }
+    }
+    
+    func attributedText() -> NSAttributedString? {
+        if let text = tweet?.text {
+            var words = text.componentsSeparatedByString(" ")
             
-        }
-    }
-
-    public var screenName : String = ""
-    public var date : String = "October 21, 1979"
-    public var favCount = -1
-    public var rtCount = -1
-    
-    var bg = C4Rectangle()
-    var scrollview = UIScrollView()
-    var logo : C4Image?
-    
-    func twitterCellHeader() {
-        if let tvc = self.tvc {
-            self.tvc!.addObserver(self, forKeyPath: "contentOffset", options: .New, context: nil)
-        }
-
-        bg = C4Rectangle(frame: C4Rect(0,0,Double(UIScreen.mainScreen().bounds.size.width),44))
-        bg.lineWidth = 0
-        bg.fillColor = darkGray
-        
-        let retweets = C4TextShape(text: "Retweets", font: C4Font(name: "Helvetica-Light", size: 16))
-        retweets.center = C4Point(bg.width - retweets.width/2.0 - 10.0, bg.height / 2.0)
-        retweets.fillColor = white
-        bg.add(retweets)
-        
-        let numRT = C4TextShape(text: "4", font: C4Font(name: "Helvetica-Bold", size: 16))
-        numRT.origin = C4Point(retweets.origin.x - numRT.width - 6, retweets.origin.y)
-        numRT.fillColor = white
-        bg.add(numRT)
-        
-        let dot = C4Ellipse(frame: C4Rect(0,0,6,6))
-        dot.lineWidth = 0
-        dot.fillColor = C4Blue
-        dot.center = C4Point(numRT.origin.x-dot.width-4, numRT.center.y)
-        bg.add(dot)
-        
-        let date = C4TextShape(text: "January 14, 2014", font: C4Font(name: "Helvetica-Light", size: 16))
-        date.origin = C4Point(dot.origin.x-6-date.width,numRT.origin.y)
-        date.fillColor = white
-        bg.add(date)
-        
-        let fg = C4Rectangle(frame: bg.bounds)
-        fg.lineWidth = 0
-        fg.fillColor = lightGray
-        self.add(bg)
-        bg.add(fg)
-        
-        var circ = C4Ellipse(frame: C4Rect())
-
-    
-        logo = C4Image(imageURL)
-        logo?.frame = C4Rect(0,0,35,35)
-        circ = C4Ellipse(frame: logo!.bounds)
-        logo!.layer?.mask = circ.layer
-        circ.lineWidth = 0
-        logo!.center = C4Point(fg.width / 2.0, 0.0)
-        fg.add(logo!)
-
-        fg.interactionEnabled = false
-        
-        let font = C4Font(name: "Helvetica", size: 16)
-        let name = C4TextShape(text: "cocoafor", font: font)
-        name.fillColor = white
-        name.lineWidth = 0
-        name.center = C4Point(name.width / 2 + 10, bg.height / 2)
-        bg.add(name)
-        
-        let a = C4ViewAnimation(duration: 0.15) {
-            fg.center = C4Point(self.bg.width / 2.0, self.bg.height / 2.0)
-            self.logo!.center = C4Point(fg.width / 2.0, self.logo!.center.y)
-            name.opacity = 1.0
-        }
-        
-        bg.addPanGestureRecognizer { (location, translation, velocity, state) -> () in
-            if(translation.x < 0 && translation.x >= -(self.bg.width - circ.width - 20) ) {
-                fg.center = C4Point(self.bg.width/2 + translation.x, self.bg.height/2.0)
-                name.opacity = (self.bg.width / 3.0 + translation.x)/(self.bg.width/3.0)
-                self.logo!.center = C4Point(fg.width / 2.0 - translation.x/2.0, self.logo!.center.y)
-            }
+            var rt = words[0] == "RT"
             
-            if state == .Ended {
-                a.animate()
-            }
-        }
-        
-        self.layoutSubviews()
-    }
-    
-    override public func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject: AnyObject], context: UnsafeMutablePointer<Void>) {
-        if keyPath == "contentOffset" {
-            if let tv = self.tvc {
-                let myPosition = tv.convertPoint(self.frame.origin, toView: tv.superview)
-                let offset = myPosition.y / tv.frame.size.height
-                if(offset >= 0 && offset <= 1.0) {
-                    logo!.center = C4Point(logo!.center.x, self.bg.height * Double(offset) / 4.0 + self.bg.height / 2.0)
+            var attributedString = NSMutableAttributedString()
+            for word in words {
+                let attributedWord = NSMutableAttributedString(string: word + " ")
+                let range = NSMakeRange(0, countElements(word))
+                
+                if word.hasPrefix("@") || word.hasPrefix("#") {
+                    attributedWord.addAttribute(NSForegroundColorAttributeName, value: tagColor, range: range)
+                    attributedWord.addAttribute(NSFontAttributeName, value: UIFont(name: "HelveticaNeue-Medium", size: 26.0)!, range: range)
                 }
+                
+                if word.hasPrefix("http:") || word.hasPrefix("www.") {
+                    attributedWord.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.StyleThick.rawValue, range: range)
+                }
+                
+                attributedString.appendAttributedString(attributedWord)
             }
             
+            if rt {
+                let prefix = NSAttributedString(string: "“")
+                attributedString.insertAttributedString(prefix, atIndex: 3)
+                let postfix = NSAttributedString(string: "”")
+                attributedString.insertAttributedString(postfix, atIndex: attributedString.length)
+            }
+            
+            var paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 6
+            paragraphStyle.alignment = .Center
+            attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
+            
+            
+            return attributedString
         }
+        
+        return nil
     }
 }
