@@ -88,28 +88,6 @@ class TweetsViewController: UITableViewController {
         }
     }
     
-    func parseProfileImage(path: String) -> String {
-        var parsedPath = path
-        var range = parsedPath.rangeOfString("_normal")
-        if range != nil {
-            parsedPath = parsedPath.stringByReplacingOccurrencesOfString("_normal", withString: "_bigger")
-        } else {
-            range = parsedPath.rangeOfString("_mini")
-            if range != nil {
-                parsedPath = parsedPath.stringByReplacingOccurrencesOfString("_mini", withString: "_bigger")
-            }
-            else {
-                range = parsedPath.rangeOfString("_bigger")
-                if range == nil {
-                    //do nothing
-                } else {
-                    parsedPath = parsedPath.stringByReplacingOccurrencesOfString(".png", withString: "_bigger.png")
-                }
-            }
-        }
-        return parsedPath
-    }
-    
     func saveTweets() {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         let tweetsPath = documentsPath.stringByAppendingPathComponent("/tweets.archive")
