@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1F590AA51A7DFF3600253247 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F590AA41A7DFF3600253247 /* TweetCell.swift */; };
-		1F590AA71A7E036500253247 /* FreightText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F590AA61A7E036500253247 /* FreightText-Light.ttf */; };
-		1F7230FB1A6CCE8B00F2986B /* C4UI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D91D8D641A69DAAA00A17464 /* C4UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F7230FC1A6CCE8E00F2986B /* C4Core.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D91D8D681A69DAAA00A17464 /* C4Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F7230FD1A6CCE9100F2986B /* C4Animation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D91D8D6C1A69DAAA00A17464 /* C4Animation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A9D6A9181A81F7F8007D0C44 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D6A9141A81F7F8007D0C44 /* Crashlytics.framework */; };
 		A9D6A9191A81F7F9007D0C44 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D6A9151A81F7F8007D0C44 /* Fabric.framework */; };
 		A9D6A91A1A81F7F9007D0C44 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D6A9161A81F7F8007D0C44 /* TwitterKit.framework */; };
@@ -21,15 +17,13 @@
 		A9D6A9241A81F8A4007D0C44 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6A91F1A81F8A4007D0C44 /* Tweet.swift */; };
 		A9D6A9251A81F8A4007D0C44 /* UniqueObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6A9201A81F8A4007D0C44 /* UniqueObject.swift */; };
 		A9D6A9261A81F8A4007D0C44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D6A9211A81F8A4007D0C44 /* User.swift */; };
+		A9D6A9291A81F9EF007D0C44 /* FreightText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9D6A9281A81F9EF007D0C44 /* FreightText-Light.ttf */; };
 		D91D8C451A69D71E00A17464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91D8C441A69D71E00A17464 /* AppDelegate.swift */; };
 		D91D8C471A69D71E00A17464 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91D8C461A69D71E00A17464 /* TweetsViewController.swift */; };
 		D91D8C4A1A69D71E00A17464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D91D8C481A69D71E00A17464 /* Main.storyboard */; };
 		D91D8C4C1A69D71E00A17464 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D91D8C4B1A69D71E00A17464 /* Images.xcassets */; };
 		D91D8C4F1A69D71E00A17464 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91D8C4D1A69D71E00A17464 /* LaunchScreen.xib */; };
 		D91D8C5B1A69D71E00A17464 /* C4TwitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91D8C5A1A69D71E00A17464 /* C4TwitterTests.swift */; };
-		D91D8D7E1A69DB4000A17464 /* C4Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D91D8D6C1A69DAAA00A17464 /* C4Animation.framework */; };
-		D91D8D7F1A69DB4000A17464 /* C4Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D91D8D681A69DAAA00A17464 /* C4Core.framework */; };
-		D91D8D801A69DB4000A17464 /* C4UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D91D8D641A69DAAA00A17464 /* C4UI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,69 +34,6 @@
 			remoteGlobalIDString = D91D8C3E1A69D71E00A17464;
 			remoteInfo = C4Twitter;
 		};
-		D91D8D631A69DAAA00A17464 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 614F824319DB5ED3001DF1D4;
-			remoteInfo = C4UI;
-		};
-		D91D8D651A69DAAA00A17464 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 614F824E19DB5ED4001DF1D4;
-			remoteInfo = C4UITests;
-		};
-		D91D8D671A69DAAA00A17464 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A9596D191A054A960023323D;
-			remoteInfo = C4Core;
-		};
-		D91D8D691A69DAAA00A17464 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A9596D231A054A960023323D;
-			remoteInfo = C4CoreTests;
-		};
-		D91D8D6B1A69DAAA00A17464 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A9596D8A1A089E9F0023323D;
-			remoteInfo = C4Animation;
-		};
-		D91D8D6D1A69DAAA00A17464 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A9596D941A089EA00023323D;
-			remoteInfo = C4AnimationTests;
-		};
-		D91D8D781A69DB3400A17464 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 614F824219DB5ED3001DF1D4;
-			remoteInfo = C4UI;
-		};
-		D91D8D7A1A69DB3400A17464 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A9596D181A054A960023323D;
-			remoteInfo = C4Core;
-		};
-		D91D8D7C1A69DB3400A17464 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A9596D891A089E9F0023323D;
-			remoteInfo = C4Animation;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -112,9 +43,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1F7230FB1A6CCE8B00F2986B /* C4UI.framework in CopyFiles */,
-				1F7230FC1A6CCE8E00F2986B /* C4Core.framework in CopyFiles */,
-				1F7230FD1A6CCE9100F2986B /* C4Animation.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +50,6 @@
 
 /* Begin PBXFileReference section */
 		1F590AA41A7DFF3600253247 /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
-		1F590AA61A7E036500253247 /* FreightText-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FreightText-Light.ttf"; sourceTree = "<group>"; };
 		A9D6A9141A81F7F8007D0C44 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		A9D6A9151A81F7F8007D0C44 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		A9D6A9161A81F7F8007D0C44 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
@@ -132,6 +59,7 @@
 		A9D6A91F1A81F8A4007D0C44 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		A9D6A9201A81F8A4007D0C44 /* UniqueObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueObject.swift; sourceTree = "<group>"; };
 		A9D6A9211A81F8A4007D0C44 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A9D6A9281A81F9EF007D0C44 /* FreightText-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FreightText-Light.ttf"; sourceTree = "<group>"; };
 		D91D8C3F1A69D71E00A17464 /* C4Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C4Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91D8C431A69D71E00A17464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D91D8C441A69D71E00A17464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,7 +70,7 @@
 		D91D8C541A69D71E00A17464 /* C4TwitterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = C4TwitterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91D8C591A69D71E00A17464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D91D8C5A1A69D71E00A17464 /* C4TwitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C4TwitterTests.swift; sourceTree = "<group>"; };
-		D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = C4iOS.xcodeproj; path = ../../C4iOS/C4iOS.xcodeproj; sourceTree = "<group>"; };
+		D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = C4iOS.xcodeproj; path = ../C4iOS/C4iOS.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,11 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D91D8D7E1A69DB4000A17464 /* C4Animation.framework in Frameworks */,
 				A9D6A9191A81F7F9007D0C44 /* Fabric.framework in Frameworks */,
-				D91D8D7F1A69DB4000A17464 /* C4Core.framework in Frameworks */,
 				A9D6A9181A81F7F8007D0C44 /* Crashlytics.framework in Frameworks */,
-				D91D8D801A69DB4000A17464 /* C4UI.framework in Frameworks */,
 				A9D6A91A1A81F7F9007D0C44 /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,13 +117,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A9D6A9271A81F9EF007D0C44 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A9D6A9281A81F9EF007D0C44 /* FreightText-Light.ttf */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		D91D8C361A69D71E00A17464 = {
 			isa = PBXGroup;
 			children = (
+				A9D6A9271A81F9EF007D0C44 /* Assets */,
 				D91D8C411A69D71E00A17464 /* C4Twitter */,
 				D91D8C571A69D71E00A17464 /* C4TwitterTests */,
 				A9D6A9131A81F7F8007D0C44 /* Frameworks */,
 				D91D8C401A69D71E00A17464 /* Products */,
+				D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,15 +149,13 @@
 		D91D8C411A69D71E00A17464 /* C4Twitter */ = {
 			isa = PBXGroup;
 			children = (
+				D91D8C4B1A69D71E00A17464 /* Images.xcassets */,
 				A9D6A91C1A81F8A4007D0C44 /* Model */,
 				D91D8C441A69D71E00A17464 /* AppDelegate.swift */,
 				D91D8C461A69D71E00A17464 /* TweetsViewController.swift */,
 				1F590AA41A7DFF3600253247 /* TweetCell.swift */,
 				D91D8C481A69D71E00A17464 /* Main.storyboard */,
-				D91D8C4B1A69D71E00A17464 /* Images.xcassets */,
 				D91D8C4D1A69D71E00A17464 /* LaunchScreen.xib */,
-				1F590AA61A7E036500253247 /* FreightText-Light.ttf */,
-				D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */,
 				D91D8C421A69D71E00A17464 /* Supporting Files */,
 			);
 			path = C4Twitter;
@@ -253,19 +186,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D91D8D5B1A69DAAA00A17464 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D91D8D641A69DAAA00A17464 /* C4UI.framework */,
-				D91D8D661A69DAAA00A17464 /* C4UITests.xctest */,
-				D91D8D681A69DAAA00A17464 /* C4Core.framework */,
-				D91D8D6A1A69DAAA00A17464 /* C4CoreTests.xctest */,
-				D91D8D6C1A69DAAA00A17464 /* C4Animation.framework */,
-				D91D8D6E1A69DAAA00A17464 /* C4AnimationTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,9 +202,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D91D8D791A69DB3400A17464 /* PBXTargetDependency */,
-				D91D8D7B1A69DB3400A17464 /* PBXTargetDependency */,
-				D91D8D7D1A69DB3400A17464 /* PBXTargetDependency */,
 			);
 			name = C4Twitter;
 			productName = C4Twitter;
@@ -338,12 +255,6 @@
 			mainGroup = D91D8C361A69D71E00A17464;
 			productRefGroup = D91D8C401A69D71E00A17464 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D91D8D5B1A69DAAA00A17464 /* Products */;
-					ProjectRef = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D91D8C3E1A69D71E00A17464 /* C4Twitter */,
@@ -352,60 +263,15 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		D91D8D641A69DAAA00A17464 /* C4UI.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = C4UI.framework;
-			remoteRef = D91D8D631A69DAAA00A17464 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D91D8D661A69DAAA00A17464 /* C4UITests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = C4UITests.xctest;
-			remoteRef = D91D8D651A69DAAA00A17464 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D91D8D681A69DAAA00A17464 /* C4Core.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = C4Core.framework;
-			remoteRef = D91D8D671A69DAAA00A17464 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D91D8D6A1A69DAAA00A17464 /* C4CoreTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = C4CoreTests.xctest;
-			remoteRef = D91D8D691A69DAAA00A17464 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D91D8D6C1A69DAAA00A17464 /* C4Animation.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = C4Animation.framework;
-			remoteRef = D91D8D6B1A69DAAA00A17464 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D91D8D6E1A69DAAA00A17464 /* C4AnimationTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = C4AnimationTests.xctest;
-			remoteRef = D91D8D6D1A69DAAA00A17464 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		D91D8C3D1A69D71E00A17464 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F590AA71A7E036500253247 /* FreightText-Light.ttf in Resources */,
 				D91D8C4A1A69D71E00A17464 /* Main.storyboard in Resources */,
 				D91D8C4F1A69D71E00A17464 /* LaunchScreen.xib in Resources */,
 				D91D8C4C1A69D71E00A17464 /* Images.xcassets in Resources */,
+				A9D6A9291A81F9EF007D0C44 /* FreightText-Light.ttf in Resources */,
 				A9D6A91B1A81F7F9007D0C44 /* TwitterKitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,21 +333,6 @@
 			isa = PBXTargetDependency;
 			target = D91D8C3E1A69D71E00A17464 /* C4Twitter */;
 			targetProxy = D91D8C551A69D71E00A17464 /* PBXContainerItemProxy */;
-		};
-		D91D8D791A69DB3400A17464 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = C4UI;
-			targetProxy = D91D8D781A69DB3400A17464 /* PBXContainerItemProxy */;
-		};
-		D91D8D7B1A69DB3400A17464 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = C4Core;
-			targetProxy = D91D8D7A1A69DB3400A17464 /* PBXContainerItemProxy */;
-		};
-		D91D8D7D1A69DB3400A17464 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = C4Animation;
-			targetProxy = D91D8D7C1A69DB3400A17464 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
