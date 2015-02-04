@@ -11,7 +11,7 @@ class TweetsViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(20, 0, 0, 0)
-        self.tableView.estimatedRowHeight = 100.0;
+        self.tableView.estimatedRowHeight = 200.0;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.refreshControl?.addTarget(self, action: Selector("refresh"), forControlEvents:.ValueChanged)
         loadTweets()
@@ -72,6 +72,7 @@ class TweetsViewController: UITableViewController {
                     println("err: \(jsonError)")
                 }
                 if let array = jsonData {
+                    self.tweets = []
                     self.parseJSON(array)
                     self.saveTweets()
                     self.tableView?.reloadData()

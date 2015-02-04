@@ -14,7 +14,10 @@ public class TweetCell : UITableViewCell {
     @IBOutlet weak var dateLabel : UILabel?
     @IBOutlet weak var userImageView : UIImageView?
     @IBOutlet weak var bodyLabel : UILabel?
-
+    @IBOutlet weak var mediaImageView : UIImageView?
+    @IBOutlet weak var mediaHeightConstraint : NSLayoutConstraint?
+    @IBOutlet weak var spacingConstraint : NSLayoutConstraint?
+    
     public override func awakeFromNib() {
         userImageView?.layer.cornerRadius = userImageView!.bounds.width/2
         userImageView?.layer.masksToBounds = true
@@ -52,22 +55,37 @@ public class TweetCell : UITableViewCell {
         }
         
         // FIXME: this is really inefficient when scrolling, we need to load the images on the background
+        userImageView?.image = nil
         if let imageURLString = tweet.user?.imageURL {
             if let url = NSURL(string: imageURLString) {
                 var image = C4Image(url: url)
                 userImageView?.image = image.uiimage
-            } else {
-                userImageView?.image = nil
             }
-        } else {
-            userImageView?.image = nil
+        }
+
+        mediaImageView?.image = nil
+        mediaHeightConstraint?.constant = 0
+        spacingConstraint?.constant = 0
+        if let media = tweet.entities?.media {
+            if let url = media.first?.mediaURL {
+                var image = C4Image(url: url)
+                mediaImageView?.image = image.uiimage
+
+                let maxWidth = mediaImageView!.bounds.size.width
+                if CGFloat(image.size.width) > maxWidth {
+                    let height = CGFloat(image.size.height) * maxWidth / CGFloat(image.size.width)
+                    mediaHeightConstraint?.constant = CGFloat(height)
+                } else {
+                    mediaHeightConstraint?.constant = CGFloat(image.size.height)
+                }
+                spacingConstraint?.constant = 20
+                layoutIfNeeded()
+            }
         }
     }
     
     class func buildAttributedText(text: String) -> NSAttributedString? {
         var words = text.componentsSeparatedByString(" ")
-        
-        var rt = words[0] == "RT"
         
         var attributedString = NSMutableAttributedString()
         for word in words {
@@ -84,13 +102,6 @@ public class TweetCell : UITableViewCell {
             }
             
             attributedString.appendAttributedString(attributedWord)
-        }
-        
-        if rt {
-            let prefix = NSAttributedString(string: "“")
-            attributedString.insertAttributedString(prefix, atIndex: 3)
-            let postfix = NSAttributedString(string: "”")
-            attributedString.insertAttributedString(postfix, atIndex: attributedString.length)
         }
         
         var paragraphStyle = NSMutableParagraphStyle()

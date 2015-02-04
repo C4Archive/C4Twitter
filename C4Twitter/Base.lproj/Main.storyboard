@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetTableViewCell" rowHeight="164" id="4Vr-BZ-zBW" customClass="TweetCell" customModule="C4Twitter" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetTableViewCell" rowHeight="300" id="4Vr-BZ-zBW" customClass="TweetCell" customModule="C4Twitter" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Vr-BZ-zBW" id="Xcn-j4-4uB">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -62,20 +62,29 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZA-c6-Ruc">
-                                            <rect key="frame" x="20" y="99" width="560" height="45"/>
+                                            <rect key="frame" x="20" y="99" width="560" height="29"/>
                                             <fontDescription key="fontDescription" name="FreightTextLight" family="FreightText" pointSize="30"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JjX-Yd-t6E">
+                                            <rect key="frame" x="20" y="148" width="560" height="132"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" priority="750" constant="132" id="Ch2-xi-Pzd"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.27058823529411763" green="0.27450980392156865" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="4Sc-AU-jKO" firstAttribute="top" secondItem="Xcn-j4-4uB" secondAttribute="top" id="43D-Dk-ScG"/>
+                                        <constraint firstAttribute="bottom" secondItem="JjX-Yd-t6E" secondAttribute="bottom" constant="20" id="9TC-LO-drt"/>
+                                        <constraint firstItem="JjX-Yd-t6E" firstAttribute="top" secondItem="TZA-c6-Ruc" secondAttribute="bottom" constant="20" id="Ltl-Vz-fTK"/>
                                         <constraint firstItem="TZA-c6-Ruc" firstAttribute="top" secondItem="ekX-09-UIr" secondAttribute="bottom" constant="20" id="bc3-mI-p4s"/>
                                         <constraint firstAttribute="trailing" secondItem="4Sc-AU-jKO" secondAttribute="trailing" id="gnm-Zt-0Tl"/>
-                                        <constraint firstAttribute="bottom" secondItem="TZA-c6-Ruc" secondAttribute="bottom" constant="20" id="iSM-bC-1BK"/>
+                                        <constraint firstItem="JjX-Yd-t6E" firstAttribute="leading" secondItem="Xcn-j4-4uB" secondAttribute="leading" constant="20" id="lXm-lV-Cn2"/>
                                         <constraint firstItem="4Sc-AU-jKO" firstAttribute="leading" secondItem="Xcn-j4-4uB" secondAttribute="leading" id="ot4-P6-2ZT"/>
                                         <constraint firstItem="TZA-c6-Ruc" firstAttribute="leading" secondItem="Xcn-j4-4uB" secondAttribute="leading" constant="20" id="qDS-Ro-gGQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="JjX-Yd-t6E" secondAttribute="trailing" constant="20" id="svG-Dx-aAR"/>
                                         <constraint firstAttribute="trailing" secondItem="TZA-c6-Ruc" secondAttribute="trailing" constant="20" id="vAC-ae-U4e"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -84,6 +93,9 @@
                                     <outlet property="bodyLabel" destination="TZA-c6-Ruc" id="G2d-xy-SNu"/>
                                     <outlet property="dateLabel" destination="Yaa-me-trr" id="aqO-wF-1nF"/>
                                     <outlet property="headerView" destination="4Sc-AU-jKO" id="936-1Y-6ox"/>
+                                    <outlet property="mediaHeightConstraint" destination="Ch2-xi-Pzd" id="y37-yT-iIO"/>
+                                    <outlet property="mediaImageView" destination="JjX-Yd-t6E" id="Knf-M1-pRd"/>
+                                    <outlet property="spacingConstraint" destination="Ltl-Vz-fTK" id="tdL-H6-Unz"/>
                                     <outlet property="userImageView" destination="ekX-09-UIr" id="riQ-hT-cRL"/>
                                     <outlet property="userLabel" destination="00U-g3-ECF" id="eQh-zf-jEh"/>
                                 </connections>
