@@ -81,7 +81,7 @@ class TweetsViewController: UITableViewController {
             }
         }
     }
-    
+
     func parseJSON(jsonData: NSMutableArray) {
         for i in 0..<jsonData.count {
             var tweet = Tweet(json: jsonData[i] as NSDictionary)

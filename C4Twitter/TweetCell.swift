@@ -4,15 +4,20 @@ import C4Core
 import C4Animation
 import C4UI
 
-public class TweetCell : UITableViewCell {
+public class TweetCell : UITableViewCell, UIScrollViewDelegate {
     struct Constants {
         static let tagColor = UIColor(red: 0.510, green: 0.541, blue: 0.561, alpha: 1.0)
     }
-    
-    @IBOutlet weak var headerView : UIView?
-    @IBOutlet weak var userLabel : UILabel?
+
+    @IBOutlet weak var scrollView: UIScrollView?
+    @IBOutlet weak var slidingHeaderView : UIView?
+    @IBOutlet weak var userNameLabel : UILabel?
+    @IBOutlet weak var userScreenNameLabel : UILabel?
     @IBOutlet weak var dateLabel : UILabel?
     @IBOutlet weak var userImageView : UIImageView?
+    @IBOutlet weak var tweetsLabel : UILabel?
+    @IBOutlet weak var starsLabel : UILabel?
+    @IBOutlet weak var retweetsLabel : UILabel?
     @IBOutlet weak var bodyLabel : UILabel?
     @IBOutlet weak var mediaImageView : UIImageView?
     @IBOutlet weak var mediaHeightConstraint : NSLayoutConstraint?
@@ -28,6 +33,10 @@ public class TweetCell : UITableViewCell {
             updateContents()
         }
     }
+
+    public override func prepareForReuse() {
+        scrollView?.setContentOffset(CGPoint(x: 160, y: 0), animated: false)
+    }
     
     func updateContents() {
         if let tweet = tweet {
@@ -37,9 +46,14 @@ public class TweetCell : UITableViewCell {
     
     func updateContents(tweet: Tweet) {
         if let name = tweet.user?.name {
-            userLabel?.text = name
+            userNameLabel?.text = name
         } else {
-            userLabel?.text = ""
+            userNameLabel?.text = ""
+        }
+        if let screenName = tweet.user?.screenName {
+            userScreenNameLabel?.text = screenName
+        } else {
+            userScreenNameLabel?.text = ""
         }
         
         if let date = tweet.date {
@@ -47,7 +61,10 @@ public class TweetCell : UITableViewCell {
         } else {
             dateLabel?.text = ""
         }
-        
+
+        starsLabel?.text = tweet.favoriteCount.description
+        retweetsLabel?.text = tweet.retweetCount.description
+
         if let text = tweet.text {
             bodyLabel?.attributedText = TweetCell.buildAttributedText(text)
         } else {
@@ -83,7 +100,7 @@ public class TweetCell : UITableViewCell {
             }
         }
     }
-    
+
     class func buildAttributedText(text: String) -> NSAttributedString? {
         var words = text.componentsSeparatedByString(" ")
         
@@ -111,5 +128,16 @@ public class TweetCell : UITableViewCell {
         
         
         return attributedString
+    }
+
+    public func scrollViewDidScroll(scrollView: UIScrollView) {
+
+    }
+    public func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        scrollView.setContentOffset(CGPoint(x: 160, y: 0), animated: true)
+    }
+
+    public func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        scrollView.setContentOffset(CGPoint(x: 160, y: 0), animated: true)
     }
 }

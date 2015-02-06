@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1F590AA51A7DFF3600253247 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F590AA41A7DFF3600253247 /* TweetCell.swift */; };
+		A951EC2D1A8492AB00A2187B /* C4Animation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A951EC1D1A847B4500A2187B /* C4Animation.framework */; };
+		A951EC2E1A8492AB00A2187B /* C4Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A951EC191A847B4500A2187B /* C4Core.framework */; };
+		A951EC2F1A8492AB00A2187B /* C4UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A951EC151A847B4500A2187B /* C4UI.framework */; };
 		A9D6A9181A81F7F8007D0C44 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D6A9141A81F7F8007D0C44 /* Crashlytics.framework */; };
 		A9D6A9191A81F7F9007D0C44 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D6A9151A81F7F8007D0C44 /* Fabric.framework */; };
 		A9D6A91A1A81F7F9007D0C44 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D6A9161A81F7F8007D0C44 /* TwitterKit.framework */; };
@@ -27,6 +30,69 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A951EC141A847B4500A2187B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 614F824319DB5ED3001DF1D4;
+			remoteInfo = C4UI;
+		};
+		A951EC161A847B4500A2187B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 614F824E19DB5ED4001DF1D4;
+			remoteInfo = C4UITests;
+		};
+		A951EC181A847B4500A2187B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A9596D191A054A960023323D;
+			remoteInfo = C4Core;
+		};
+		A951EC1A1A847B4500A2187B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A9596D231A054A960023323D;
+			remoteInfo = C4CoreTests;
+		};
+		A951EC1C1A847B4500A2187B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A9596D8A1A089E9F0023323D;
+			remoteInfo = C4Animation;
+		};
+		A951EC1E1A847B4500A2187B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A9596D941A089EA00023323D;
+			remoteInfo = C4AnimationTests;
+		};
+		A951EC211A84929F00A2187B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 614F824219DB5ED3001DF1D4;
+			remoteInfo = C4UI;
+		};
+		A951EC231A84929F00A2187B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A9596D181A054A960023323D;
+			remoteInfo = C4Core;
+		};
+		A951EC251A84929F00A2187B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A9596D891A089E9F0023323D;
+			remoteInfo = C4Animation;
+		};
 		D91D8C551A69D71E00A17464 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D91D8C371A69D71E00A17464 /* Project object */;
@@ -78,6 +144,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A951EC2D1A8492AB00A2187B /* C4Animation.framework in Frameworks */,
+				A951EC2E1A8492AB00A2187B /* C4Core.framework in Frameworks */,
+				A951EC2F1A8492AB00A2187B /* C4UI.framework in Frameworks */,
 				A9D6A9191A81F7F9007D0C44 /* Fabric.framework in Frameworks */,
 				A9D6A9181A81F7F8007D0C44 /* Crashlytics.framework in Frameworks */,
 				A9D6A91A1A81F7F9007D0C44 /* TwitterKit.framework in Frameworks */,
@@ -94,6 +163,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A951EC0C1A847B4500A2187B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A951EC151A847B4500A2187B /* C4UI.framework */,
+				A951EC171A847B4500A2187B /* C4UITests.xctest */,
+				A951EC191A847B4500A2187B /* C4Core.framework */,
+				A951EC1B1A847B4500A2187B /* C4CoreTests.xctest */,
+				A951EC1D1A847B4500A2187B /* C4Animation.framework */,
+				A951EC1F1A847B4500A2187B /* C4AnimationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A9D6A9131A81F7F8007D0C44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +284,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				A951EC221A84929F00A2187B /* PBXTargetDependency */,
+				A951EC241A84929F00A2187B /* PBXTargetDependency */,
+				A951EC261A84929F00A2187B /* PBXTargetDependency */,
 			);
 			name = C4Twitter;
 			productName = C4Twitter;
@@ -255,6 +340,12 @@
 			mainGroup = D91D8C361A69D71E00A17464;
 			productRefGroup = D91D8C401A69D71E00A17464 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A951EC0C1A847B4500A2187B /* Products */;
+					ProjectRef = D91D8D5A1A69DAAA00A17464 /* C4iOS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D91D8C3E1A69D71E00A17464 /* C4Twitter */,
@@ -262,6 +353,51 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A951EC151A847B4500A2187B /* C4UI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = C4UI.framework;
+			remoteRef = A951EC141A847B4500A2187B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A951EC171A847B4500A2187B /* C4UITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = C4UITests.xctest;
+			remoteRef = A951EC161A847B4500A2187B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A951EC191A847B4500A2187B /* C4Core.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = C4Core.framework;
+			remoteRef = A951EC181A847B4500A2187B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A951EC1B1A847B4500A2187B /* C4CoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = C4CoreTests.xctest;
+			remoteRef = A951EC1A1A847B4500A2187B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A951EC1D1A847B4500A2187B /* C4Animation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = C4Animation.framework;
+			remoteRef = A951EC1C1A847B4500A2187B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A951EC1F1A847B4500A2187B /* C4AnimationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = C4AnimationTests.xctest;
+			remoteRef = A951EC1E1A847B4500A2187B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D91D8C3D1A69D71E00A17464 /* Resources */ = {
@@ -329,6 +465,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A951EC221A84929F00A2187B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = C4UI;
+			targetProxy = A951EC211A84929F00A2187B /* PBXContainerItemProxy */;
+		};
+		A951EC241A84929F00A2187B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = C4Core;
+			targetProxy = A951EC231A84929F00A2187B /* PBXContainerItemProxy */;
+		};
+		A951EC261A84929F00A2187B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = C4Animation;
+			targetProxy = A951EC251A84929F00A2187B /* PBXContainerItemProxy */;
+		};
 		D91D8C561A69D71E00A17464 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D91D8C3E1A69D71E00A17464 /* C4Twitter */;
